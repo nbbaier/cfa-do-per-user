@@ -18,5 +18,7 @@
     "typescript": "^5.8.3",
     "vibe-rules": "^0.3.91"
   },
-  "dependencies": {}
+  "dependencies": {
+    "hono": "^4.10.4"
+  }
 }
