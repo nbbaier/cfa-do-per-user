@@ -11,14 +11,18 @@
     "postinstall": "vibe-rules install cursor"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.3.4",
     "@cloudflare/workers-types": "^4.20250805.0",
     "@types/node": "^24.0.3",
     "alchemy": "0.77.0",
+    "drizzle-kit": "^0.31.6",
     "miniflare": "^4.20250617.3",
     "typescript": "^5.8.3",
     "vibe-rules": "^0.3.91"
   },
   "dependencies": {
-    "hono": "^4.10.4"
+    "drizzle-orm": "^0.44.7",
+    "hono": "^4.10.4",
+    "uuidv7": "^1.0.2"
   }
 }

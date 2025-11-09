@@ -1,21 +1,17 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Bundler",
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "allowImportingTsExtensions": true,
-    "rewriteRelativeImportExtensions": true,
-    "noEmit": true,
-    "types": [
-      "@cloudflare/workers-types"
-    ]
-  },
-  "include": [
-    "src/**/*",
-    "types/**/*",
-    "alchemy.run.ts"
-  ]
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "Bundler",
+		"strict": true,
+		"allowJs": true /* Allow JavaScript files to be a part of your program. Use the `checkJS` option to get errors from these files. */,
+		"checkJs": false,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"allowImportingTsExtensions": true,
+		"rewriteRelativeImportExtensions": true,
+		"noEmit": true,
+		"types": ["@cloudflare/workers-types"]
+	},
+	"include": ["src/**/*", "types/**/*", "alchemy.run.ts"]
 }

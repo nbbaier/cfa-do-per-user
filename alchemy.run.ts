@@ -6,8 +6,10 @@ import {
 	WranglerJson,
 } from "alchemy/cloudflare";
 import { CloudflareStateStore } from "alchemy/state";
-import type { HelloWorldDO } from "./src/worker.ts";
+import { migrate } from "drizzle-orm/durable-sqlite/migrator";
+import type { DurableDatabase } from "./src/worker";
 
+``;
 const app = await alchemy("cfa-do-sql", {
 	stateStore: (scope) => new CloudflareStateStore(scope),
 });
@@ -21,15 +23,29 @@ export const worker = await Worker("worker", {
 	entrypoint: "src/worker.ts",
 	bindings: {
 		CACHE: cache,
-		DO: DurableObjectNamespace<HelloWorldDO>("HelloWorldDO", {
-			className: "HelloWorldDO",
+		DO: DurableObjectNamespace<DurableDatabase>("DurableDatabase", {
+			className: "DurableDatabase",
 			sqlite: true,
 		}),
 	},
 });
 
-await WranglerJson({ worker });
+await WranglerJson({
+	worker,
+	transform: {
+		wrangler: (spec) => ({
+			...spec,
+			rules: [
+				{
+					type: "Text",
+					pattern: "**",
+					globs: ["**/*.sql"],
+					fallthrough: true,
+				},
+			],
+		}),
+	},
+});
 
 console.log(worker.url);
-
 await app.finalize();
