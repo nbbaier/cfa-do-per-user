@@ -26,7 +26,7 @@ app.get("/do", async (c) => {
 	return msg;
 });
 
-app.get("/:userId", async (c) => {
+app.post("/:userId", async (c) => {
 	const userId = c.req.param("userId");
 	const { text } = await c.req.json();
 	const stub = getDurableDatabaseStub(c.env, userId);
@@ -34,7 +34,7 @@ app.get("/:userId", async (c) => {
 	return c.json({ note });
 });
 
-app.post("/:userId", async (c) => {
+app.get("/:userId", async (c) => {
 	const userId = c.req.param("userId");
 	const stub = getDurableDatabaseStub(c.env, userId);
 	const notes = await stub.notesList();

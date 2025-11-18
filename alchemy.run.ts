@@ -6,7 +6,6 @@ import {
 	WranglerJson,
 } from "alchemy/cloudflare";
 import { CloudflareStateStore } from "alchemy/state";
-import { migrate } from "drizzle-orm/durable-sqlite/migrator";
 import type { DurableDatabase } from "./src/worker";
 
 ``;
@@ -21,6 +20,11 @@ const cache = await KVNamespace("cache", {
 
 export const worker = await Worker("worker", {
 	entrypoint: "src/worker.ts",
+	bundle: {
+		loader: {
+			".sql": "text",
+		},
+	},
 	bindings: {
 		CACHE: cache,
 		DO: DurableObjectNamespace<DurableDatabase>("DurableDatabase", {

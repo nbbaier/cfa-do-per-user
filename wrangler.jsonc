@@ -1,29 +1,41 @@
 {
-	"name": "cfa-do-sql-worker-nbbaier",
-	"main": "src/worker.ts",
-	"compatibility_date": "2025-10-31",
-	"compatibility_flags": [],
-	"kv_namespaces": [
-		{
-			"binding": "CACHE",
-			"id": "cache",
-			"preview_id": "cache"
-		}
-	],
-	"durable_objects": {
-		"bindings": [
-			{
-				"name": "DO",
-				"class_name": "HelloWorldDO",
-				"script_name": "cfa-do-sql-worker-nbbaier"
-			}
-		]
-	},
-	"migrations": [
-		{
-			"tag": "v1",
-			"new_sqlite_classes": ["HelloWorldDO"],
-			"new_classes": []
-		}
-	]
+  "name": "cfa-do-sql-worker-nbbaier",
+  "main": "src/worker.ts",
+  "compatibility_date": "2025-10-31",
+  "compatibility_flags": [],
+  "kv_namespaces": [
+    {
+      "binding": "CACHE",
+      "id": "6a4bc32c69574db3954ac317849948af",
+      "preview_id": "6a4bc32c69574db3954ac317849948af"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "DO",
+        "class_name": "DurableDatabase",
+        "script_name": "cfa-do-sql-worker-nbbaier"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "DurableDatabase"
+      ],
+      "new_classes": []
+    }
+  ],
+  "rules": [
+    {
+      "type": "Text",
+      "pattern": "**",
+      "globs": [
+        "**/*.sql"
+      ],
+      "fallthrough": true
+    }
+  ]
 }
