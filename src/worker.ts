@@ -5,7 +5,7 @@ import { Hono } from "hono";
 import type { worker } from "../alchemy.run";
 import migrations from "../drizzle/migrations";
 import * as notes from "./db/index";
-import * as schema from "./db/schemas";
+import * as schema from "./db/schema";
 import type { DB } from "./db/types";
 
 function getDurableDatabaseStub(env: Env, userId: string) {

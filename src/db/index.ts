@@ -1,5 +1,5 @@
 import { eq } from "drizzle-orm";
-import { notes } from "./notes";
+import { notes } from "./schema";
 import type { DB, InsertNote, Note } from "./types";
 
 export async function create(db: DB, note: InsertNote): Promise<Note> {
@@ -33,6 +33,5 @@ export async function get(
 }
 
 export async function list(db: DB): Promise<Note[]> {
-	const ns = await db.select().from(notes);
-	return ns;
+	return await db.select().from(notes);
 }

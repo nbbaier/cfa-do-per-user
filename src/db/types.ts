@@ -1,7 +1,6 @@
 import type { DrizzleSqliteDODatabase } from "drizzle-orm/durable-sqlite";
-import type { notes } from "./notes";
-import type * as schema from "./schemas";
+import type * as schema from "./schema";
 
-export type Note = typeof notes.$inferSelect;
-export type InsertNote = typeof notes.$inferInsert;
 export type DB = DrizzleSqliteDODatabase<typeof schema>;
+export type Note = typeof schema.notes.$inferSelect;
+export type InsertNote = typeof schema.notes.$inferInsert;

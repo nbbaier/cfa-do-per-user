@@ -6,9 +6,7 @@ export const notes = sqliteTable("notes", {
 		.notNull()
 		.primaryKey()
 		.$defaultFn(() => uuidv7()),
-
 	text: text("text").notNull(),
-
 	created: integer("created", { mode: "timestamp_ms" })
 		.$defaultFn(() => new Date())
 		.notNull(),
