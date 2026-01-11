@@ -6,8 +6,8 @@
   "kv_namespaces": [
     {
       "binding": "CACHE",
-      "id": "6a4bc32c69574db3954ac317849948af",
-      "preview_id": "6a4bc32c69574db3954ac317849948af"
+      "id": "cache",
+      "preview_id": "cache"
     }
   ],
   "durable_objects": {
@@ -22,9 +22,7 @@
   "migrations": [
     {
       "tag": "v1",
-      "new_sqlite_classes": [
-        "DurableDatabase"
-      ],
+      "new_sqlite_classes": ["DurableDatabase"],
       "new_classes": []
     }
   ],
@@ -32,9 +30,7 @@
     {
       "type": "Text",
       "pattern": "**",
-      "globs": [
-        "**/*.sql"
-      ],
+      "globs": ["**/*.sql"],
       "fallthrough": true
     }
   ]
