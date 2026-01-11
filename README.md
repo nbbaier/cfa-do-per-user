@@ -2,7 +2,8 @@
 
 [![Deployed with Alchemy](https://alchemy.run/alchemy-badge.svg)](https://alchemy.run)
 
-A Cloudflare Workers application demonstrating per-user data isolation using Durable Objects with SQLite storage and Drizzle ORM.
+A Cloudflare Workers application demonstrating per-user data isolation using Durable Objects with SQLite storage and Drizzle ORM. Implements the code in [Boris Tane's post "One Database Per User with Cloudflare Durable Objects and Drizzle ORM"](https://boristane.com/blog/durable-objects-database-per-user)
+
 
 ## Features
 
