@@ -3,13 +3,6 @@
   "main": "src/worker.ts",
   "compatibility_date": "2025-10-31",
   "compatibility_flags": [],
-  "kv_namespaces": [
-    {
-      "binding": "CACHE",
-      "id": "cache",
-      "preview_id": "cache"
-    }
-  ],
   "durable_objects": {
     "bindings": [
       {
@@ -22,7 +15,9 @@
   "migrations": [
     {
       "tag": "v1",
-      "new_sqlite_classes": ["DurableDatabase"],
+      "new_sqlite_classes": [
+        "DurableDatabase"
+      ],
       "new_classes": []
     }
   ],
@@ -30,7 +25,9 @@
     {
       "type": "Text",
       "pattern": "**",
-      "globs": ["**/*.sql"],
+      "globs": [
+        "**/*.sql"
+      ],
       "fallthrough": true
     }
   ]

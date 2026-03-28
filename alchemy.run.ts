@@ -9,6 +9,7 @@ import type { DurableDatabase } from "./src/worker";
 
 const app = await alchemy("cfa-do-sql", {
   stateStore: (scope) => new CloudflareStateStore(scope),
+  adopt: true,
 });
 
 export const worker = await Worker("worker", {
