@@ -4,13 +4,12 @@
   "version": "0.0.0",
   "description": "Alchemy Typescript Project",
   "scripts": {
-    "build": "tsc -b",
+    "typecheck": "tsc",
     "deploy": "alchemy deploy",
     "destroy": "alchemy destroy",
     "dev": "alchemy dev",
     "postinstall": "vibe-rules install cursor",
     "fix": "ultracite fix",
-    "lint": "ultracite check",
     "check": "ultracite check"
   },
   "dependencies": {
