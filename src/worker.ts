@@ -15,9 +15,7 @@ function getDurableDatabaseStub(env: Env, userId: string) {
 
 const app = new Hono<{ Bindings: Env }>();
 
-app.get("/", (c) => {
-  return c.text("Hello Hono!");
-});
+app.get("/", (c) => c.text("Hello Hono!"));
 
 app.get("/do", async (c) => {
   const id = c.env.DO.idFromName("hello-world");

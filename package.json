@@ -1,8 +1,8 @@
 {
   "name": "cfa-do-per-user",
+  "type": "module",
   "version": "0.0.0",
   "description": "Alchemy Typescript Project",
-  "type": "module",
   "scripts": {
     "build": "tsc -b",
     "deploy": "alchemy deploy",
@@ -10,22 +10,23 @@
     "dev": "alchemy dev",
     "postinstall": "vibe-rules install cursor",
     "fix": "ultracite fix",
-    "lint": "ultracite check"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.4.9",
-    "@cloudflare/workers-types": "^4.20260317.1",
-    "@types/node": "^25.5.0",
-    "alchemy": "0.90.1",
-    "drizzle-kit": "^0.31.10",
-    "miniflare": "^4.20260317.3",
-    "typescript": "^6.0.2",
-    "ultracite": "7.3.2",
-    "vibe-rules": "^0.3.91"
+    "lint": "ultracite check",
+    "check": "ultracite check"
   },
   "dependencies": {
     "drizzle-orm": "^0.45.2",
-    "hono": "^4.12.9",
+    "hono": "^4.12.23",
     "uuidv7": "^1.2.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.15",
+    "@cloudflare/workers-types": "^4.20260603.1",
+    "@types/node": "^25.9.1",
+    "alchemy": "0.90.1",
+    "drizzle-kit": "^0.31.10",
+    "miniflare": "^4.20260601.0",
+    "typescript": "^6.0.3",
+    "ultracite": "7.8.1",
+    "vibe-rules": "^0.3.91"
   }
 }
