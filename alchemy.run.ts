@@ -7,7 +7,7 @@ import {
 import { CloudflareStateStore } from "alchemy/state";
 import type { DurableDatabase } from "./src/worker";
 
-const app = await alchemy("cfa-do-sql", {
+const app = await alchemy("cfa-do-per-user", {
   stateStore: (scope) => new CloudflareStateStore(scope),
   adopt: true,
 });

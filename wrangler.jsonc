@@ -1,21 +1,23 @@
 {
-  "name": "cfa-do-sql-worker-nbbaier",
+  "name": "cfa-do-per-user-worker-nbbaier",
   "main": "src/worker.ts",
-  "compatibility_date": "2025-10-31",
+  "compatibility_date": "2026-03-10",
   "compatibility_flags": [],
   "durable_objects": {
     "bindings": [
       {
         "name": "DO",
         "class_name": "DurableDatabase",
-        "script_name": "cfa-do-sql-worker-nbbaier"
+        "script_name": "cfa-do-per-user-worker-nbbaier"
       }
     ]
   },
   "migrations": [
     {
       "tag": "v1",
-      "new_sqlite_classes": ["DurableDatabase"],
+      "new_sqlite_classes": [
+        "DurableDatabase"
+      ],
       "new_classes": []
     }
   ],
@@ -23,7 +25,9 @@
     {
       "type": "Text",
       "pattern": "**",
-      "globs": ["**/*.sql"],
+      "globs": [
+        "**/*.sql"
+      ],
       "fallthrough": true
     }
   ]
