@@ -8,7 +8,6 @@
     "deploy": "alchemy deploy",
     "destroy": "alchemy destroy",
     "dev": "alchemy dev",
-    "postinstall": "vibe-rules install cursor",
     "fix": "ultracite fix",
     "check": "ultracite check"
   },
@@ -25,7 +24,6 @@
     "drizzle-kit": "^0.31.10",
     "miniflare": "^4.20260601.0",
     "typescript": "^6.0.3",
-    "ultracite": "7.8.1",
-    "vibe-rules": "^0.3.91"
+    "ultracite": "7.8.1"
   }
 }
